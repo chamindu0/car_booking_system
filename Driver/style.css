@@ -3,20 +3,28 @@
 /* General Styles */
 body {
     margin: 0;
-    font-family: poppins;
+    font-family: Poppins, sans-serif;
     color: #333;
     background-color: #ffffff;
+    scroll-behavior: smooth; /* Smooth scrolling for internal links */
 }
 
 /* Navigation Bar Styles */
 .navbar {
+    position: fixed; /* Fixes the navbar at the top */
+    top: 0;
+    left: 0;
+    width: 100%; /* Ensure the navbar takes up the full width of the screen */
     display: flex;    
     justify-content: space-between;
     align-items: center;
     background-color: #faf9d0; /* Monochrome color */
     color: #000000;
     padding: 10px 20px;
+    z-index: 1000; /* Ensures the navbar stays on top of other content */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow for better visibility */
 }
+
 
 .navbar-logo img {
     height: 60px; /* Adjust logo size */
@@ -30,6 +38,10 @@ body {
     gap: 70px;
     margin: 0;
     padding: 0;
+}
+
+.navbar-nav li {
+    position: relative;
 }
 
 /* Navigation Bar Styles */
@@ -66,11 +78,80 @@ body {
     margin-right: 250px;
 }
 
+/* Main Content */
+main {
+    padding: 80px 20px 20px; /* Adjust padding to account for the fixed header */
+}
+
+/* Section Styles */
+section {
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+}
+
+section h2 {
+    margin-top: 0;
+    font-size: 24px;
+    color: #333;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+form input, form textarea, form select {
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+form button {
+    padding: 10px 15px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: poppins;
+}
+
+form button:hover {
+    background-color: #555;
+}
+
+/* Buttons for Booking Management, Trip Tracking, etc. */
+.booking-notifications button, .trip-details button, .tracking-map button, .payment-details button, .history-list button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: poppins;
+    margin: 5px 0;
+}
+
+.booking-notifications button:hover, .trip-details button:hover, .tracking-map button:hover, .payment-details button:hover, .history-list button:hover {
+    background-color: #0056b3;
+}
+
 /* Footer Styles */
 .footer {
     background-color: #faf9d0;
     text-align: center;
-    padding: 10px;
+    padding: 20px;
     margin-top: 30px;
     color: #000000;
     font-size: 13px;
@@ -89,3 +170,100 @@ body {
     height: auto;
     vertical-align: middle;
 }
+
+
+/* Dropdown Menu Styles */
+.navbar-user {
+    position: relative;
+    display: inline-block;
+}
+
+#dropdown-menu {
+    display: none; /* Hidden by default */
+    position: absolute;
+    right: 20;
+    background-color: #f3f17e;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 10px;
+}
+
+#dropdown-menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#dropdown-menu ul li {
+    padding: 10px;
+    text-align: center;
+}
+
+#dropdown-menu ul li a {
+    color: #000;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+}
+
+#dropdown-menu ul li a:hover {
+    background-color: #ddd;
+    border-radius: 10px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Profile Popup Styles */
+.profile-popup {
+    display: none; /* Hidden by default */
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    width: 400px;
+    border-radius: 8px;
+}
+
+.popup-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.popup-content label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.popup-content input {
+    margin-bottom: 15px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.popup-content button {
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.popup-content button:hover {
+    background-color: #555;
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+}
+

@@ -22,3 +22,18 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const dropdownIcon = document.querySelector('.dropdown-icon');
+    const navbar = document.querySelector('.navbar');
+
+    dropdownIcon.addEventListener('click', function() {
+        // Toggle active class to show or hide the dropdown menu
+        navbar.classList.toggle('active');
+    });
+});
+
+// home.js
+document.querySelector('.dropdown-icon').addEventListener('click', function() {
+    document.querySelector('.navbar').classList.toggle('active');
+});

@@ -10,33 +10,138 @@
     <!-- Navigation Bar -->
     <header class="navbar">
         <div class="navbar-logo">
-            <img src="Logo/City Taxi.png" alt="City Taxi Logo">
+            <img src="../Logo/City Taxi.png" alt="City Taxi Logo">
         </div>
         <nav class="navbar-nav">
             <ul>                
-                <li><a href="#">Passenger</a></li>
-                <li><a href="#">Driver</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#availability">Availability</a></li>
+                <li><a href="#booking">Booking</a></li>
+                <li><a href="#tracking">Trips Tracking</a></li>
+                <li><a href="#payments">Payments</a></li>
+                <li><a href="#history">Trip History</a></li>
             </ul>
         </nav>
         <div class="navbar-user">
-            <a href="../Login/Login.html"><img src="PNG/user.png" alt="User Icon"></a>
+            <img src="../PNG/user.png" alt="User Icon" id="user-icon">
+            <!-- Dropdown Menu -->
+            <div class="dropdown" id="dropdown-menu">
+                <ul>
+                    <li><a href="#" id="view-profile">View Profile</a></li>
+                    <li><a href="../Login/Login.html">Logout</a></li>
+                </ul>
+            </div>
         </div>
     </header>
 
     <main>
+        <!-- Profile Popup -->
+        <div class="profile-popup" id="profile-popup">
+            <div class="popup-content">
+                <span class="close-btn" id="close-popup">&times;</span>
+                <h2>Driver Profile</h2>
+                <form>
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Driver Name">
+                    
+                    <label for="contact">Contact Info</label>
+                    <input type="text" id="contact" name="contact" placeholder="Contact Info">
+                    
+                    <label for="vehicle-details">Vehicle Details</label>
+                    <input type="text" id="vehicle-details" name="vehicle-details" placeholder="Vehicle Details">
 
+                    <label for="maintenance-status">Vehicle Maintenance Status</label>
+                    <input type="text" id="maintenance-status" name="maintenance-status" placeholder="Maintenance Status">
+
+                    <button type="submit">Update Profile</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Availability Management Section -->
+        <section id="availability">
+            <h2>Availability Management</h2>
+            <form>
+                <label for="status">Set Status:</label>
+                <select id="status" name="status">
+                    <option value="available">Available</option>
+                    <option value="busy">Busy</option>
+                    <option value="offline">Offline</option>
+                </select>
+                
+                <button type="submit">Update Status</button>
+            </form>
+        </section>
+
+        <!-- Booking Management Section -->
+        <section id="booking">
+            <h2>Booking Management</h2>
+            <div class="booking-notifications">
+                <p>Receive and manage trip requests:</p>
+                <!-- This could be replaced with real-time notifications -->
+                <button type="button">View Trip Requests</button>
+                <button type="button">Accept Trip</button>
+                <button type="button">Decline Trip</button>
+            </div>
+            <div class="trip-details">
+                <h3>Trip Details</h3>
+                <p>View and manage trip details:</p>
+                <button type="button">View Trip Details</button>
+            </div>
+        </section>
+
+        <!-- Trip Tracking Section -->
+        <section id="tracking">
+            <h2>Trip Tracking</h2>
+            <div class="tracking-map">
+                <p>View passenger location and track routes:</p>
+                <!-- Integrate a map or GPS functionality here -->
+                <button type="button">Start Tracking</button>
+            </div>
+        </section>
+
+        <!-- Payment Handling Section -->
+        <section id="payments">
+            <h2>Payment Handling</h2>
+            <div class="payment-details">
+                <p>View and manage payment details:</p>
+                <button type="button">View Payment Details</button>
+                <button type="button">Get Payment Notifications</button>
+            </div>
+        </section>
+
+        <!-- Trip History Section -->
+        <section id="history">
+            <h2>Trip History</h2>
+            <div class="history-list">
+                <p>View past trips and report issues:</p>
+                <button type="button">View Trip History</button>
+                <button type="button">Report Issue</button>
+            </div>
+        </section>
     </main>
 
     <!-- Footer Section -->
     <footer class="footer">
         <p>Follow Us:</p>
         <div class="social-icons">
-            <a href="https://facebook.com" target="_blank"><img src="PNG/social-media (2).png" alt="Facebook Icon"></a>
-            <a href="https://twitter.com" target="_blank"><img src="PNG/social-media.png" alt="Twitter Icon"></a>
+            <a href="https://facebook.com" target="_blank"><img src="../PNG/social-media (2).png" alt="Facebook Icon"></a>
+            <a href="https://twitter.com" target="_blank"><img src="../PNG/social-media.png" alt="Twitter Icon"></a>
         </div>
         <p>&copy; 2024 City Taxi (PVT) Ltd. All rights reserved.</p>
     </footer>
+
+    <!-- JavaScript for Smooth Scrolling -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+    <script src="driver.js"></script>
+
 </body>
 </html>

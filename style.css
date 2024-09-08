@@ -193,3 +193,81 @@ main {
 #contact h2 {
     text-align: center;
 }
+
+
+/* RESPONSIVE STYLES */
+/* Dropdown Icon */
+.dropdown-icon {
+    font-size: 30px;
+    cursor: pointer;
+    display: none; /* Hidden by default */
+}
+
+/* Dropdown Menu (hidden by default) */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    background-color: #faf9d0;
+    text-align: center;
+    z-index: 1001;
+}
+
+.dropdown-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.dropdown-menu ul li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.dropdown-menu ul li a {
+    color: #000;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .navbar-nav .nav-links {
+        display: none; /* Hide the regular nav links */
+    }
+
+    .dropdown-icon {
+        display: block; /* Show the dropdown icon in mobile view */
+    }
+
+    /* Display the dropdown menu when active */
+    .navbar.active .dropdown-menu {
+        display: block;
+    }
+
+    .navbar-icons {
+        justify-content: flex-end; /* Align icons to the right */
+    }
+
+    /* Dropdown menu takes full width */
+    .dropdown-menu {
+        width: 100%;
+    }
+}
+
+/* Media Query for Vertically High Screens */
+@media screen and (min-height: 900px) {
+    .navbar-icons {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+    }
+
+    .dropdown-icon {
+        position: absolute;
+        top: 10px;
+        right: 80px;
+    }
+}
