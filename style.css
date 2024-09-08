@@ -5,15 +5,15 @@ body {
     margin: 0;
     font-family: poppins;
     color: #333;
-    background-color: #f8f8f8;
+    background-color: #ffffff;
 }
 
 /* Navigation Bar Styles */
 .navbar {
-    display: flex;
+    display: flex;    
     justify-content: space-between;
     align-items: center;
-    background-color: #dadada; /* Monochrome color */
+    background-color: #faf9d0; /* Monochrome color */
     color: #000000;
     padding: 10px 20px;
 }
@@ -63,10 +63,114 @@ body {
     height: 40px;
     width: auto;
     border-radius: 50%;
-    margin-right: 200px;
+    margin-right: 250px;
 }
 
 /* Main Content */
 main {
     padding: 20px;
+}
+
+.intro-section {
+    background-color: #f3e8a8;
+    padding: 20px;
+    margin: 0;
+}
+
+.intro-section h1 {
+    font-size: 40px;
+    text-align: center;
+}
+
+.intro-section p {
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.services-section {
+    background-color: #fff;
+    padding: 20px;
+    margin: 0px 0px;
+}
+
+.services-section h2{
+    font-size: 30px;
+    text-align: center;
+}
+
+.service-img {
+    display: flex;
+    justify-content: center; /* Centers the images horizontally */
+    gap: 30px; /* Space between images */
+    margin: 20px 0; /* Margin around the image container */
+}
+
+.services-section img {
+    margin: 0px 100px;
+    width: 100px; /* Adjust the width as necessary */
+    height: auto; /* Ensure the aspect ratio is maintained */
+}
+
+.services-section img + img {
+    margin-left: 30px;
+}
+
+.services-section ul {
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.benefits-section {
+    background-color: #f3e8a8;
+    padding: 20px;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.benefits-section h2 {
+    font-size: 30px;
+    text-align: center;
+}
+
+.benefits-img {
+    display: flex;
+    justify-content: center; /* Centers the images horizontally */
+    gap: 30px; /* Space between images */
+    margin: 20px 0; /* Margin around the image container */
+}
+
+.benefits-section img {
+    margin: 0px 100px;
+    width: 100px; /* Adjust the width as necessary */
+    height: auto; /* Ensure the aspect ratio is maintained */
+}
+
+.benefits-section ul {
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+
+/* Footer Styles */
+.footer {
+    background-color: #faf9d0;
+    text-align: center;
+    padding: 10px;
+    margin-top: 30px;
+    color: #000000;
+    font-size: 13px;
+}
+
+.footer .social-icons {
+    margin: 10px 0;
+}
+
+.footer .social-icons a {
+    margin: 0 15px;
+}
+
+.footer .social-icons img {
+    width: 30px; /* Adjust the size of the social media icons */
+    height: auto;
+    vertical-align: middle;
 }
