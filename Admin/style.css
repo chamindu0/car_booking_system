@@ -74,91 +74,6 @@ body {
     margin-right: 250px;
 }
 
-/* Main Content */
-main {
-    padding: 20px;
-}
-
-.intro-section {
-    background-color: #f3e8a8;
-    padding: 20px;
-    margin: 0;
-}
-
-.intro-section h1 {
-    font-size: 40px;
-    text-align: center;
-}
-
-.intro-section p {
-    margin-left: 100px;
-    margin-right: 100px;
-}
-
-.services-section {
-    background-color: #fff;
-    padding: 20px;
-    margin: 0px 0px;
-}
-
-.services-section h2{
-    font-size: 30px;
-    text-align: center;
-}
-
-.service-img {
-    display: flex;
-    justify-content: center; /* Centers the images horizontally */
-    gap: 30px; /* Space between images */
-    margin: 20px 0; /* Margin around the image container */
-}
-
-.services-section img {
-    margin: 0px 100px;
-    width: 100px; /* Adjust the width as necessary */
-    height: auto; /* Ensure the aspect ratio is maintained */
-}
-
-.services-section img + img {
-    margin-left: 30px;
-}
-
-.services-section ul {
-    margin-left: 100px;
-    margin-right: 100px;
-}
-
-.benefits-section {
-    background-color: #f3e8a8;
-    padding: 20px;
-    margin-left: 0;
-    margin-right: 0;
-}
-
-.benefits-section h2 {
-    font-size: 30px;
-    text-align: center;
-}
-
-.benefits-img {
-    display: flex;
-    justify-content: center; /* Centers the images horizontally */
-    gap: 30px; /* Space between images */
-    margin: 20px 0; /* Margin around the image container */
-}
-
-.benefits-section img {
-    margin: 0px 100px;
-    width: 100px; /* Adjust the width as necessary */
-    height: auto; /* Ensure the aspect ratio is maintained */
-}
-
-.benefits-section ul {
-    margin-left: 100px;
-    margin-right: 100px;
-}
-
-
 /* Footer Styles */
 .footer {
     background-color: #faf9d0;
@@ -181,4 +96,39 @@ main {
     width: 30px; /* Adjust the size of the social media icons */
     height: auto;
     vertical-align: middle;
+}
+
+
+/* Section Styles */
+.section {
+    padding: 50px 100px;
+    border-bottom: 1px solid #ccc;
+}
+
+.section h2 {
+    text-align: center;
+}
+
+#dashboard {
+    background-color: #f5f5f5;
+}
+
+#passengers, #drivers, #vehicles, #bookings, #payments, #reports, #system {
+    background-color: #ffffff;
+}
+
+.charts-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.chart {
+    width: 45%;
+    height: 300px;
+    background-color: #faf9d0;
+    border: 1px solid #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
