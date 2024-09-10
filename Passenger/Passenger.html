@@ -10,33 +10,148 @@
     <!-- Navigation Bar -->
     <header class="navbar">
         <div class="navbar-logo">
-            <img src="Logo/City Taxi.png" alt="City Taxi Logo">
+            <a href="../home.html"><img src="../Logo/City Taxi.png" alt="City Taxi Logo"></a>
         </div>
         <nav class="navbar-nav">
             <ul>                
-                <li><a href="#">Passenger</a></li>
-                <li><a href="#">Driver</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#booking-management">Bookings</a></li>
+                <li><a href="#trip-tracking">Trip</a></li>
+                <li><a href="#ratings-reviews">Ratings</a></li>
+                <li><a href="#payment">Payment</a></li>
+                <li><a href="#trip-history">Trip History</a></li>
+                <li><a href="#manual-booking">Operator Booking</a></li>
             </ul>
         </nav>
         <div class="navbar-user">
-            <a href="Login/Login.html"><img src="PNG/user.png" alt="User Icon"></a>
+            <a href="Login/Login.html"><img src="../PNG/user.png" alt="User Icon"></a>
         </div>
     </header>
 
     <main>
+        <!-- Customer Profile Section -->
+        <section id="customer-profile">
+            <h2>Customer Profile</h2>
+            <form id="profile-form">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name">
+                
+                <label for="contact-number">Contact Number</label>
+                <input type="text" id="contact-number" name="contact-number" placeholder="Enter your contact number">
+                
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email">
+                
+                <label for="payment-methods">Payment Methods</label>
+                <select id="payment-methods" name="payment-methods">
+                    <option value="credit-card">Credit Card</option>
+                    <option value="e-wallet">E-wallet</option>
+                </select>
+                
+                <button type="submit">Update Profile</button>
+            </form>
+        </section>
 
+        <!-- Booking Management Section -->
+        <section id="booking-management">
+            <h2>Booking Management</h2>
+            <form id="booking-form">
+                <label for="pickup-location">Pickup Location</label>
+                <input type="text" id="pickup-location" name="pickup-location" placeholder="Enter pickup location">
+                
+                <label for="dropoff-location">Drop-off Location</label>
+                <input type="text" id="dropoff-location" name="dropoff-location" placeholder="Enter drop-off location">
+                
+                <button type="submit">Book Taxi</button>
+            </form>
+
+            <div id="available-drivers">
+                <h3>Available Drivers</h3>
+                <ul>
+                    <li>Driver 1 - <button>Select Driver</button></li>
+                    <li>Driver 2 - <button>Select Driver</button></li>
+                    <li>Driver 3 - <button>Select Driver</button></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Trip Tracking Section -->
+        <section id="trip-tracking">
+            <h2>Trip Tracking</h2>
+            <p>Track your driver's location in real-time:</p>
+            <div id="map">
+                <!-- Placeholder for map integration (e.g., Google Maps) -->
+                <p>Map displaying driver's location</p>
+            </div>
+        </section>
+
+        <!-- Ratings and Reviews Section -->
+        <section id="ratings-reviews">
+            <h2>Rate Your Driver</h2>
+            <form id="ratings-form">
+                <label for="rating">Rating</label>
+                <select id="rating" name="rating">
+                    <option value="1">1 Star</option>
+                    <option value="2">2 Stars</option>
+                    <option value="3">3 Stars</option>
+                    <option value="4">4 Stars</option>
+                    <option value="5">5 Stars</option>
+                </select>
+
+                <label for="feedback">Feedback</label>
+                <textarea id="feedback" name="feedback" placeholder="Leave feedback (optional)"></textarea>
+                
+                <button type="submit">Submit Review</button>
+            </form>
+        </section>
+
+        <!-- Payment Section -->
+        <section id="payment">
+            <h2>Payment</h2>
+            <p>Fare Estimate: $20.00</p>
+            <button>Pay Now</button>
+        </section>
+
+        <!-- Trip History Section -->
+        <section id="trip-history">
+            <h2>Trip History</h2>
+            <ul>
+                <li>Trip 1 - $15.00 - 4 Stars - <button>Report Issue</button></li>
+                <li>Trip 2 - $25.00 - 5 Stars - <button>Report Issue</button></li>
+                <li>Trip 3 - $10.00 - 3 Stars - <button>Report Issue</button></li>
+            </ul>
+        </section>
+
+        <!-- Operator Manual Booking Section -->
+        <section id="manual-booking">
+            <h2>Manual Booking (Operator Only)</h2>
+            <form id="operator-booking-form">
+                <label for="passenger-name">Passenger Name</label>
+                <input type="text" id="passenger-name" name="passenger-name" placeholder="Enter passenger name">
+                
+                <label for="passenger-phone">Passenger Phone</label>
+                <input type="text" id="passenger-phone" name="passenger-phone" placeholder="Enter phone number">
+                
+                <label for="manual-pickup">Pickup Location</label>
+                <input type="text" id="manual-pickup" name="manual-pickup" placeholder="Enter pickup location">
+                
+                <label for="manual-dropoff">Drop-off Location</label>
+                <input type="text" id="manual-dropoff" name="manual-dropoff" placeholder="Enter drop-off location">
+                
+                <button type="submit">Create Booking</button>
+            </form>
+        </section>
     </main>
 
     <!-- Footer Section -->
     <footer class="footer">
         <p>Follow Us:</p>
         <div class="social-icons">
-            <a href="https://facebook.com" target="_blank"><img src="PNG/social-media (2).png" alt="Facebook Icon"></a>
-            <a href="https://twitter.com" target="_blank"><img src="PNG/social-media.png" alt="Twitter Icon"></a>
+            <a href="https://facebook.com" target="_blank"><img src="../PNG/social-media (2).png" alt="Facebook Icon"></a>
+            <a href="https://twitter.com" target="_blank"><img src="../PNG/social-media.png" alt="Twitter Icon"></a>
         </div>
         <p>&copy; 2024 City Taxi (PVT) Ltd. All rights reserved.</p>
     </footer>
+
+    <script src="passenger.js"></script>
 </body>
 </html>

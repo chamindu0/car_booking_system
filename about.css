@@ -6,6 +6,7 @@ body {
     font-family: poppins;
     color: #333;
     background-color: #ffffff;
+    padding-top: 80px;
 }
 
 /* Navigation Bar Styles */
@@ -73,6 +74,7 @@ body {
     margin-right: 250px;
 }
 
+
 /* Footer Styles */
 .footer {
     background-color: #faf9d0;
@@ -81,6 +83,8 @@ body {
     margin-top: 30px;
     color: #000000;
     font-size: 13px;
+    margin-left: 0;
+    margin-right: 0;
 }
 
 .footer .social-icons {
@@ -97,117 +101,154 @@ body {
     vertical-align: middle;
 }
 
-/* Section Styling */
-main section {
-    padding: 40px 200px; /* Align padding with the rest of the system */
+
+/* Main Section Styles */
+main {
+    padding: 20px 200px;
+}
+
+/* About Us Section */
+#about-us, #mission, #services, #technology, #testimonials, #our-team, #safety, #contact-us, #careers {
     margin-bottom: 50px;
-    background-color: #faf9d0; /* Use monochrome color for consistency */
-    border-radius: 8px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    color: #333333;
 }
 
-/* Map Section */
-#map {
-    height: 300px;
-    background-color: #e9e9e9;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 8px;
+#about-us h1, #mission h2, #services h2, #technology h2, #testimonials h2, #our-team h2, #safety h2, #contact-us h2, #careers h2 {
+    font-weight: 600;
+    color: #000000;
     margin-bottom: 20px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+#about-us p, #mission p, #technology p, #testimonials p, #our-team p, #safety p, #contact-us p, #careers p {
     font-weight: 300;
-    color: #333333;
-}
-
-/* Form Styles */
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding: 20px; /* Ensure padding consistency */
-    background-color: #ffffff; /* Keep a clean, white form background */
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-label {
     font-size: 18px;
+    color: #333333;
+    line-height: 1.8;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+ul li {
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+
+/* Services Section */
+#services ul {
+    list-style-type: disc;
+    margin-left: 40px;
+}
+
+#services li {
+    font-size: 18px;
+    color: #000000;
+}
+
+/* Testimonials Section */
+#testimonials {
+    background-color: #f5f5f5;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial {
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.testimonial strong {
+    display: block;
+    margin-top: 10px;
+    color: #000000;
     font-weight: 500;
-    margin-bottom: 8px;
-    color: #000000; /* Use black text for labels for consistency */
 }
 
-input[type="text"],
-input[type="email"],
-textarea,
-select {
-    padding: 12px 15px;
-    font-size: 16px;
-    border: 1px solid #cccccc;
-    border-radius: 6px;
-    background-color: #faf9d0; /* Monochrome background for inputs */
-    color: #333333;
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+/* Our Team Section */
+#our-team ul {
+    list-style: none;
+    padding-left: 0;
 }
 
-textarea {
-    height: 120px;
-}
-
-button {
-    padding: 12px 20px;
+#our-team li {
     font-size: 18px;
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+/* Contact Us Section */
+#contact-us ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+#contact-us li {
+    font-size: 18px;
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+/* Button Styles */
+.button {
+    display: inline-block;
+    background-color: #000000;
     color: #ffffff;
-    background-color: #000000; /* Consistent button color */
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 18px;
     transition: background-color 0.3s ease;
 }
 
-button:hover {
-    background-color: #333333; /* Darken button on hover */
+.button:hover {
+    background-color: #333333;
 }
 
-/* Available Drivers Section */
-#available-drivers ul {
-    list-style: none;
-    padding: 0;
+/* Career Opportunities Section */
+#careers {
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-#available-drivers li {
-    margin-bottom: 10px;
+#careers p {
     font-size: 18px;
-    font-weight: 400;
-    color: #333333;
+    font-weight: 300;
+    margin-bottom: 20px;
 }
 
-#available-drivers button {
-    padding: 10px 15px;
-    font-size: 16px;
-    background-color: #000000; /* Align with monochrome theme */
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
+#careers a.button {
+    font-weight: 500;
 }
 
-#available-drivers button:hover {
-    background-color: #333333; /* Consistent hover effect */
-}
-
-/* Consistent Spacing and Layout */
+/* Responsive Design */
 @media (max-width: 1200px) {
-    main section {
-        padding: 40px 50px; /* Adjust padding for smaller screens */
+    main {
+        padding: 20px 50px;
     }
 }
 
 @media (max-width: 768px) {
-    main section {
-        padding: 40px 30px; /* Further adjust padding for mobile */
+    .navbar-logo img {
+        margin-left: 50px;
+    }
+
+    .navbar-user img {
+        margin-right: 50px;
+    }
+
+    main {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar-nav ul {
+        gap: 30px;
     }
 }
