@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* General Styles */
+body {
+    margin: 0;
+    font-family: poppins;
+    color: #333;
+    background-color: #ffffff;
+    padding-top: 80px;
+}
+
+/* Navigation Bar Styles */
+.navbar {
+    position: fixed; /* Fixes the navbar at the top */
+    top: 0;
+    left: 0;
+    width: 100%; /* Ensure the navbar takes up the full width of the screen */
+    display: flex;    
+    justify-content: space-between;
+    align-items: center;
+    background-color: #faf9d0; /* Monochrome color */
+    color: #000000;
+    padding: 10px 20px;
+    z-index: 1000; /* Ensures the navbar stays on top of other content */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow for better visibility */
+}
+
+
+.navbar-logo img {
+    height: 60px; /* Adjust logo size */
+    width: auto;
+    margin-left: 200px;
+}
+
+.navbar-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 70px;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation Bar Styles */
+.navbar-nav a {
+    position: relative;
+    color: #000000;
+    text-decoration: none;
+    font-size: 20px;
+    overflow: hidden; 
+}
+
+.navbar-nav a::after {
+    content: ''; 
+    position: absolute;
+    left: 50%; 
+    bottom: -5px; 
+    width: 100%;
+    height: 1px;
+    background-color: #000000; 
+    transform: translateX(-50%) scaleX(0); 
+    transform-origin: center; 
+    transition: transform 0.4s ease-out;
+}
+
+.navbar-nav a:hover::after {
+    transform: translateX(-50%) scaleX(1);
+}
+
+
+.navbar-user img {
+    height: 40px;
+    width: auto;
+    border-radius: 50%;
+    margin-right: 250px;
+}
+
+/* Main Content */
+main {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.intro-section {
+    background-color: #f3e8a8;
+    padding: 20px;
+    
+}
+
+.intro-section h1 {
+    font-size: 40px;
+    text-align: center;
+}
+
+.intro-section p {
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.services-section {
+    background-color: #fff;
+    padding: 20px;
+    
+}
+
+.services-section h2{
+    font-size: 30px;
+    text-align: center;
+}
+
+.service-img {
+    display: flex;
+    justify-content: center; /* Centers the images horizontally */
+    gap: 30px; /* Space between images */
+    margin: 20px 0; /* Margin around the image container */
+}
+
+.services-section img {
+    margin: 0px 100px;
+    width: 100px; /* Adjust the width as necessary */
+    height: auto; /* Ensure the aspect ratio is maintained */
+}
+
+.services-section img + img {
+    margin-left: 30px;
+}
+
+.services-section ul {
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.benefits-section {
+    background-color: #f3e8a8;
+    padding: 20px;
+    
+}
+
+.benefits-section h2 {
+    font-size: 30px;
+    text-align: center;
+}
+
+.benefits-img {
+    display: flex;
+    justify-content: center; /* Centers the images horizontally */
+    gap: 30px; /* Space between images */
+    margin: 20px 0; /* Margin around the image container */
+}
+
+.benefits-section img {
+    margin: 0px 100px;
+    width: 100px; /* Adjust the width as necessary */
+    height: auto; /* Ensure the aspect ratio is maintained */
+}
+
+.benefits-section ul {
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+
+/* Footer Styles */
+.footer {
+    background-color: #faf9d0;
+    text-align: center;
+    padding: 10px;
+    margin-top: 30px;
+    color: #000000;
+    font-size: 13px;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.footer .social-icons {
+    margin: 10px 0;
+}
+
+.footer .social-icons a {
+    margin: 0 15px;
+}
+
+.footer .social-icons img {
+    width: 30px; /* Adjust the size of the social media icons */
+    height: auto;
+    vertical-align: middle;
+}
+
+#contact {
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+#contact h2 {
+    text-align: center;
+}
+
+
+/* RESPONSIVE STYLES */
+/* Dropdown Icon */
+.dropdown-icon {
+    font-size: 30px;
+    cursor: pointer;
+    display: none; /* Hidden by default */
+}
+
+/* Dropdown Menu (hidden by default) */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    background-color: #faf9d0;
+    text-align: center;
+    z-index: 1001;
+}
+
+.dropdown-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.dropdown-menu ul li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.dropdown-menu ul li a {
+    color: #000;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .navbar-nav .nav-links {
+        display: none; /* Hide the regular nav links */
+    }
+
+    .dropdown-icon {
+        display: block; /* Show the dropdown icon in mobile view */
+    }
+
+    /* Display the dropdown menu when active */
+    .navbar.active .dropdown-menu {
+        display: block;
+    }
+
+    .navbar-icons {
+        justify-content: flex-end; /* Align icons to the right */
+    }
+
+    /* Dropdown menu takes full width */
+    .dropdown-menu {
+        width: 100%;
+    }
+}
+
+/* Media Query for Vertically High Screens */
+@media screen and (min-height: 900px) {
+    .navbar-icons {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+    }
+
+    .dropdown-icon {
+        position: absolute;
+        top: 10px;
+        right: 80px;
+    }
+}

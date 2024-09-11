@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* General Styles */
+body {
+    margin: 0;
+    font-family: poppins;
+    color: #333;
+    background-color: #ffffff;
+}
+
+/* Navigation Bar Styles */
+.navbar {
+    position: fixed; /* Fixes the navbar at the top */
+    top: 0;
+    left: 0;
+    width: 100%; /* Ensure the navbar takes up the full width of the screen */
+    display: flex;    
+    justify-content: space-between;
+    align-items: center;
+    background-color: #faf9d0; /* Monochrome color */
+    color: #000000;
+    padding: 10px 20px;
+    z-index: 1000; /* Ensures the navbar stays on top of other content */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow for better visibility */
+}
+
+
+.navbar-logo img {
+    height: 60px; /* Adjust logo size */
+    width: auto;
+    margin-left: 200px;
+}
+
+.navbar-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 70px;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation Bar Styles */
+.navbar-nav a {
+    position: relative;
+    color: #000000;
+    text-decoration: none;
+    font-size: 20px;
+    overflow: hidden; 
+}
+
+.navbar-nav a::after {
+    content: ''; 
+    position: absolute;
+    left: 50%; 
+    bottom: -5px; 
+    width: 100%;
+    height: 1px;
+    background-color: #000000; 
+    transform: translateX(-50%) scaleX(0); 
+    transform-origin: center; 
+    transition: transform 0.4s ease-out;
+}
+
+.navbar-nav a:hover::after {
+    transform: translateX(-50%) scaleX(1);
+}
+
+
+.navbar-user img {
+    height: 40px;
+    width: auto;
+    border-radius: 50%;
+    margin-right: 250px;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #faf9d0;
+    text-align: center;
+    padding: 10px;
+    margin-top: 30px;
+    color: #000000;
+    font-size: 13px;
+}
+
+.footer .social-icons {
+    margin: 10px 0;
+}
+
+.footer .social-icons a {
+    margin: 0 15px;
+}
+
+.footer .social-icons img {
+    width: 30px; /* Adjust the size of the social media icons */
+    height: auto;
+    vertical-align: middle;
+}
+
+/* Section Styling */
+main section {
+    padding: 40px 200px; /* Align padding with the rest of the system */
+    margin-bottom: 50px;
+    background-color: #faf9d0; /* Use monochrome color for consistency */
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    color: #333333;
+}
+
+/* Map Section */
+#map {
+    height: 300px;
+    background-color: #e9e9e9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    font-weight: 300;
+    color: #333333;
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px; /* Ensure padding consistency */
+    background-color: #ffffff; /* Keep a clean, white form background */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #000000; /* Use black text for labels for consistency */
+}
+
+input[type="text"],
+input[type="email"],
+textarea,
+select {
+    padding: 12px 15px;
+    font-size: 16px;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    background-color: #faf9d0; /* Monochrome background for inputs */
+    color: #333333;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+textarea {
+    height: 120px;
+}
+
+button {
+    padding: 12px 20px;
+    font-size: 18px;
+    color: #ffffff;
+    background-color: #000000; /* Consistent button color */
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #333333; /* Darken button on hover */
+}
+
+/* Available Drivers Section */
+#available-drivers ul {
+    list-style: none;
+    padding: 0;
+}
+
+#available-drivers li {
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: 400;
+    color: #333333;
+}
+
+#available-drivers button {
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #000000; /* Align with monochrome theme */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#available-drivers button:hover {
+    background-color: #333333; /* Consistent hover effect */
+}
+
+/* Consistent Spacing and Layout */
+@media (max-width: 1200px) {
+    main section {
+        padding: 40px 50px; /* Adjust padding for smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    main section {
+        padding: 40px 30px; /* Further adjust padding for mobile */
+    }
+}
