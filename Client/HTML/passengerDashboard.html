@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Passenger Dashboard</title>
+    <link rel="stylesheet" href="../CSS/passengerDashboard.css" />
+    <script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA2-R2HJHtelji_4yXEPi5DW2TdBhYl6sI&loading=async&callback=initMap"
+    defer
+    >
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Passenger Dashboard</h2>
+
+      <!-- Passenger Profile Section -->
+      <div id="profile">
+        <h3>Your Profile</h3>
+        <p><strong>Name:</strong> <span id="name"></span></p>
+        <p><strong>Email:</strong> <span id="email"></span></p>
+        <p><strong>Phone:</strong> <span id="phone"></span></p>
+      </div>
+
+      <!-- Booking Section -->
+      <div id="bookings">
+        <h3>Your Bookings</h3>
+        <ul id="bookingList"></ul>
+      </div>
+
+  <div id="driverListSection"></div>
+  <h3>Nearest Drivers</h3>
+  <ul id="driverList"></ul>
+        
+
+<form id="createBookingForm">
+    
+
+    
+
+    <label for="pickupLocation">Pickup Location:</label>
+    <input type="text" id="pickupLocation" required>
+
+    <label for="dropoffLocation">Dropoff Location:</label>
+    <input type="text" id="dropoffLocation" required>
+
+    <label for="date">Date:</label>
+    <input type="date" id="date" required>
+
+    <button id="newBookingBtn">Create Booking</button>
+</form>
+
+ <div id="map" style="height: 400px; width: 100%;"></div>
+ <br>
+      <!-- Trip Tracking Section -->
+      <div id="trackingSection" style="display: none">
+        <h3>Track Your Driver</h3>
+        <div id="map" style="height: 400px; width: 100%"></div>
+        <p><strong>Driver Name:</strong> <span id="driverName"></span></p>
+        <p><strong>Vehicle No:</strong> <span id="vehicleNo"></span></p>
+        <button id="cancelBookingBtn">Cancel Booking</button>
+      </div>
+      
+     
+
+      <!-- Trip History Section -->
+      <div id="history">
+        <h3>Your Trip History</h3>
+        <ul id="tripHistoryList"></ul>
+      </div>
+    </div>
+
+    <script src="../JS/passengerDashboard.js"></script>
+  </body>
+</html>

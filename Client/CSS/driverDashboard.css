@@ -1,0 +1,122 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Container Styles */
+.container {
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    width: 90%;
+    max-width: 800px;
+    text-align: center;
+}
+
+/* Title Styles */
+h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Dashboard Info Styles */
+#dashboard {
+    background-color: #e9f5f8;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+#dashboard p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+#dashboard strong {
+    font-weight: 600;
+}
+
+#availability {
+    font-weight: bold;
+    color: green;
+}
+
+/* Button Styles */
+button {
+    background-color: #2193b0;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 15px;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #176d87;
+}
+
+button:active {
+    background-color: #145c6e;
+}
+
+/* Map Styles */
+#map {
+    height: 400px;
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+/* Available Hires Styles */
+#availableHires {
+    margin-top: 30px;
+    text-align: left;
+}
+
+#availableHires h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+#hireList {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#hireList li {
+    background-color: #e9f5f8;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#hireList li:hover {
+    background-color: #d3eef2;
+}
+
+#hireList li p {
+    margin: 0;
+    font-size: 1rem;
+}

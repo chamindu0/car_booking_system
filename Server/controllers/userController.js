@@ -1,38 +1,35 @@
-// server/controllers/userController.js
 const User = require('../models/userModel');
-const sendEmail = require('../utils/sendEmail');
+const Driver = require('../models/driverModel');
 
-exports.registerUser = async (req, res) => {
-    const { name, email, phone, role } = req.body;
+exports.registerUserAndDriver = async (req, res) => {
+    const { name, email, password, phone, role, vehicleNo, vehicleType } = req.body;
 
     try {
-        // Check if the user is already registered
-        const existingUser = await User.findOne({ email });
-        if (existingUser) {
-            return res.status(400).json({ success: false, message: 'User already registered with this email.' });
-        }
+        // Step 1: Create and save the user
+        const newUser = new User({ name, email, password, phone, role });
+        const savedUser = await newUser.save();
 
-        // Create a new user
-        const newUser = new User({ name, email, phone, role });
-        await newUser.save();
-
-        // Compose email subject and message based on the user's role
-        let subject, message;
+        // Step 2: If the role is 'driver', create and save the driver details
         if (role === 'driver') {
-            subject = 'Welcome to City Taxi as a Driver!';
-            message = `Hello ${name},\n\nThank you for registering as a driver with City Taxi! You will soon receive requests for rides from passengers. Please make sure to log in to your driver portal to manage your availability and rides.\n\nBest regards,\nCity Taxi Team`;
-        } else {
-            subject = 'Welcome to City Taxi as a Passenger!';
-            message = `Hello ${name},\n\nThank you for registering as a passenger with City Taxi! You can now book rides easily through our platform. We hope you enjoy using our services.\n\nBest regards,\nCity Taxi Team`;
+            const newDriver = new Driver({
+                userId: savedUser._id,   // Reference the user ID
+                vehicleNo,
+                vehicleType,
+                availability: 'busy',   // Default availability to 'busy'
+                location: { lat: 0, lng: 0 } // Default location to (0,0)
+            });
+
+            await newDriver.save(); // Save the driver document
         }
 
-        // Send the email
-        await sendEmail(email, subject, message);
+        // Send response
+        res.status(201).json({ success: true,  success: true,
+            message: 'Registration successful!',
+            role: role // Include the user's role in the response
+        });
 
-        // Respond to the client
-        res.json({ success: true, message: 'User registered and email sent.' });
     } catch (error) {
-        console.error('Error registering user:', error);
-        res.status(500).json({ success: false, message: 'Failed to register user.' });
+        console.error('Error registering user and driver:', error);
+        res.status(500).json({ success: false, message: 'Failed to register user and driver.' });
     }
 };

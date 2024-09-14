@@ -16,8 +16,11 @@
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" placeholder="Enter your email" autocomplete="email" required>
 
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" autocomplete="password" required>
+
             <label for="phone">Phone Number:</label>
-            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" autocomplete="phone"  required>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" autocomplete="phone" required>
 
             <label for="role">Register as:</label>
             <select id="role" name="role" required>
@@ -25,7 +28,22 @@
                 <option value="driver">Driver</option>
             </select>
 
+            <!-- Hidden fields for driver-specific information -->
+            <div id="driverFields" style="display: none;">
+                <label for="vehicleNo">Vehicle Number:</label>
+                <input type="text" id="vehicleNo" name="vehicleNo" placeholder="Enter your vehicle number">
+
+                <label for="vehicleType">Vehicle Type:</label>
+                <select id="vehicleType" name="vehicleType">
+                    <option value="car">Car</option>
+                    <option value="van">Van</option>
+                    <option value="three-wheeler">Three-Wheeler</option>
+                </select>
+            </div>
+
             <button type="submit">Register</button>
+            <br><br>
+            <p>If you have an account? <a href="../HTML/login.html">Login</a></p>
         </form>
     </div>
 

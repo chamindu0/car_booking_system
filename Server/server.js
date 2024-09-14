@@ -2,6 +2,9 @@ const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const userRoutes = require('./routes/userRoutes');
+const authRoutes = require('./routes/authRoutes');
+const driverRoutes = require('./routes/driverRoutes');
+const pessengerRoutes = require('./routes/passengerRoutes')
 require('dotenv').config();
 
 const app = express();
@@ -26,6 +29,9 @@ mongoose.connect(process.env.MONGO_URI)
 
 // Routes
 app.use('/', userRoutes);
+app.use('/', authRoutes);
+app.use('/', driverRoutes);
+app.use('/', pessengerRoutes);
 
 // Start the server
 app.listen(PORT, () => {

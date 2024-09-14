@@ -1,8 +1,8 @@
-
 const express = require('express');
-const { registerUser } = require('../controllers/userController');
+const { registerUserAndDriver } = require('../controllers/userController');
 const router = express.Router();
 
-router.post('/register', registerUser);
+router.post('/register', registerUserAndDriver);  // Call both functions in sequence
 
 module.exports = router;
+

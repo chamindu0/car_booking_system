@@ -1,0 +1,226 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #333;
+}
+
+/* Container Styles */
+.container {
+    background-color: #fff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 30px;
+    width: 90%;
+    max-width: 900px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+/* Title Styles */
+h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 30px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* Profile Section */
+#profile {
+    background-color: #f0f9ff;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+#profile h3 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+#profile p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+#profile strong {
+    color: #2193b0;
+}
+
+/* Booking Section */
+#bookings {
+    background-color: #e9f5f8;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+#bookings h3 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+#bookingList {
+    list-style-type: none;
+    padding: 0;
+}
+
+#bookingList li {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.3s;
+}
+
+#bookingList li:hover {
+    background-color: #f0f9ff;
+}
+
+/* Create Booking Form */
+form#createBookingForm {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+form#createBookingForm label {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 8px;
+    display: block;
+}
+
+form#createBookingForm input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+}
+
+form#createBookingForm button {
+    background-color: #2193b0;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+form#createBookingForm button:hover {
+    background-color: #176d87;
+}
+
+/* Trip Tracking Section */
+#trackingSection {
+    background-color: #f0f9ff;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+#trackingSection h3 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+#trackingSection p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+#trackingSection #map {
+    height: 400px;
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+#trackingSection button {
+    background-color: #ff5c5c;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+#trackingSection button:hover {
+    background-color: #e74c3c;
+}
+
+/* Trip History Section */
+#history {
+    background-color: #e9f5f8;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;
+}
+
+#history h3 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+#tripHistoryList {
+    list-style-type: none;
+    padding: 5;
+}
+
+#tripHistoryList li {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.3s;
+}
+
+#tripHistoryList li:hover {
+    background-color: #f0f9ff;
+    height: 400px;
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+#map {
+    height: 400px;
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
