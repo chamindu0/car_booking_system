@@ -9,7 +9,7 @@ router.get('/driver/details', getDriverDetails);
 router.post('/driver/availability',toggleAvailability);
 
 // Fetch available hires
-router.get('/driver/hires',getAvailableHires);
+router.get('/driver/hires/:driverId',getAvailableHires);
 
 // Accept a hire
 router.post('/driver/hires/accept',acceptHire);

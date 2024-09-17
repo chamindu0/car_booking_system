@@ -2,6 +2,7 @@ const Driver = require('../models/driverModel');
 const User = require('../models/userModel');
 const Booking = require('../models/bookingModel');
 
+
 const mongoose = require('mongoose');
 
 // Fetch driver details
@@ -46,9 +47,8 @@ exports.getDriverDetails = async (req, res) => {
 // Toggle driver availability
 exports.toggleAvailability = async (req, res) => {
     try {
-        const driver = await Driver.findOne(req.driverId);
+        const driver = await Driver.findById(req.body.driverId);
         if (!driver) return res.status(404).json({ success: false, message: 'Driver not found' });
-
         if(req.body.availability == true)
         {
             driver.availability = "available";
@@ -66,8 +66,11 @@ exports.toggleAvailability = async (req, res) => {
 
 // Fetch available hires
 exports.getAvailableHires = async (req, res) => {
+    const {driverId} = req.params;
+    console.log(driverId);
     try {
-        const hires = await Booking.find({ status: 'active' }).populate('passenger', 'name'); 
+        const hires = await Booking.find({driver: driverId, status: 'active' }).populate('passenger', 'name'); 
+        console.log(hires)
         res.json(hires);
     } catch (error) {
         console.error('Error fetching available hires:', error);

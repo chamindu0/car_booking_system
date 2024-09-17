@@ -3,8 +3,8 @@ const Driver = require('../models/driverModel');
 const bcrypt = require('bcrypt'); 
 
 exports.loginUser = async (req, res) => {
-    const { email, password } = req.body;
-
+    const { email, password,location } = req.body;
+   
     try {
         // Check if the user exists
         const user = await User.findOne({ email });
@@ -18,9 +18,8 @@ exports.loginUser = async (req, res) => {
             return res.status(400).json({ success: false, message: 'Invalid password.' });
         }
 
-       
+
        let driverId;
-       let driverName;
        let passengerId;
 
         // Check the role of the user
@@ -30,8 +29,9 @@ exports.loginUser = async (req, res) => {
             
             driverId = driver._id; 
             
-                
-                
+        driver.location = location;  // Update location
+        await driver.save();
+         console.log(location)
             
         } else if (user.role === 'passenger') {
             // Passenger ID is the user ID

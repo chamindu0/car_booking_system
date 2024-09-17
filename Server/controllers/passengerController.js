@@ -3,6 +3,8 @@ const Driver = require('../models/driverModel')
 const Booking = require('../models/bookingModel');
 const Trip = require('../models/tripModel');
 
+
+
 // Fetch passenger profile by passengerId
 exports.getPassengerProfile = async (req, res) => {
     const { passengerId } = req.params; // Extract passengerId from route params
@@ -22,14 +24,17 @@ exports.getPassengerProfile = async (req, res) => {
 
 // create a new booking
 exports.createBooking = async (req, res) => {
-    const { passengerId, pickupLocation, dropoffLocation, date } = req.body;
-
+    const { passengerId,driverId, pickupLocation, dropoffLocation, fare,date } = req.body;
+   console.log(req.body)
     try {
         // Create a new booking
         const newBooking = new Booking({
+            success:true,
             passenger: passengerId,
+            driver:driverId,
             pickupLocation,
             dropoffLocation,
+            fare,
             date,
             status: 'active',
         });
@@ -37,12 +42,15 @@ exports.createBooking = async (req, res) => {
         // Save the new booking to the database
         await newBooking.save();
 
+
         res.json({ success: true, booking: newBooking });
+
     } catch (error) {
         console.error('Error creating booking:', error);
-        res.status(500).json({ success: false, message: 'Server error' });
-    }
+            res.status(500).json({ error: 'Failed to create booking or send SMS' });
+        }
 };
+
 
 // Fetch active bookings for a passenger by passengerId
 exports.getPassengerBookings = async (req, res) => {
@@ -51,6 +59,7 @@ exports.getPassengerBookings = async (req, res) => {
     try {
         const bookings = await Booking.find({ passenger: passengerId, status: 'active' });
         res.json({ success: true, bookings });
+        console.log(bookings);
     } catch (error) {
         console.error('Error fetching bookings:', error);
         res.status(500).json({ success: false, message: 'Server error' });
@@ -93,32 +102,25 @@ exports.cancelBooking = async (req, res) => {
 
 // Controller function to get drivers within a radius
 exports.getClosestDrivers = async (req, res) => {
-    const { lat, lng, radius } = req.query;
-
+    const { lat, lng, radius  } = req.query; // radius in meters (default 100km)
     try {
-        const drivers = await Driver.find({}); // Consider optimizing this for large datasets
+        // MongoDB's $near operator for geospatial queries
+        const drivers = await Driver.find({
+            availability: 'available',
+            location: {
+                $near: {
+                    $geometry: {
+                        type: 'Point',
+                        coordinates: [lng, lat] // [longitude, latitude]
+                    },
+                    $maxDistance: radius  // Max distance in meters
+                }
+            }
+        });
 
-        const filteredDrivers = drivers.map(driver => {
-            const distance = calculateDistance(lat, lng, driver.latitude, driver.longitude);
-            return { ...driver.toObject(), distance };
-        }).filter(driver => driver.distance <= radius);
-
-        filteredDrivers.sort((a, b) => a.distance - b.distance);
-
-        res.json(filteredDrivers);
+        res.json({ success: true, drivers });
     } catch (error) {
-        res.status(500).json({ error: 'Internal server error' });
+        console.error('Error fetching closest drivers:', error);
+        res.status(500).json({ success: false, message: 'Internal server error' });
     }
 };
-
-// Helper function to calculate distance (Haversine formula)
-function calculateDistance(lat1, lng1, lat2, lng2) {
-    const R = 6371; // Radius of the Earth in km
-    const dLat = (lat2 - lat1) * (Math.PI / 180);
-    const dLng = (lng2 - lng1) * (Math.PI / 180);
-    const a = Math.sin(dLat / 2) ** 2 +
-              Math.cos(lat1 * (Math.PI / 180)) * Math.cos(lat2 * (Math.PI / 180)) *
-              Math.sin(dLng / 2) ** 2;
-    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-    return R * c; // Distance in km
-}

@@ -4,7 +4,8 @@ const mongoose = require('mongoose');
 const userRoutes = require('./routes/userRoutes');
 const authRoutes = require('./routes/authRoutes');
 const driverRoutes = require('./routes/driverRoutes');
-const pessengerRoutes = require('./routes/passengerRoutes')
+const pessengerRoutes = require('./routes/passengerRoutes');
+const tripRoutes = require('./routes/tripRoutes');
 require('dotenv').config();
 
 const app = express();
@@ -32,6 +33,7 @@ app.use('/', userRoutes);
 app.use('/', authRoutes);
 app.use('/', driverRoutes);
 app.use('/', pessengerRoutes);
+app.use('/',tripRoutes);
 
 // Start the server
 app.listen(PORT, () => {

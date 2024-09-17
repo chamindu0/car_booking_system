@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family:sans-serif;
     background-color: #f4f7f6;
     display: flex;
     justify-content: center;
@@ -25,6 +25,7 @@ body {
     max-width: 900px;
     margin: 20px auto;
     text-align: center;
+    
 }
 
 /* Title Styles */
@@ -32,8 +33,15 @@ h2 {
     font-size: 2.5rem;
     color: #333;
     margin-bottom: 30px;
-    font-weight: 600;
+    font-weight: 1000;
     letter-spacing: 1px;
+    background-color: #f0f9ff;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    text-align: center;
+    text-transform:uppercase;
+    font-family:Verdana, Geneva, Tahoma, sans-serif ;
 }
 
 /* Profile Section */
@@ -42,7 +50,7 @@ h2 {
     padding: 20px;
     border-radius: 10px;
     margin-bottom: 30px;
-    text-align: left;
+    text-align: center;
 }
 
 #profile h3 {
@@ -67,7 +75,7 @@ h2 {
     padding: 20px;
     border-radius: 10px;
     margin-bottom: 30px;
-    text-align: left;
+    text-align: center;
 }
 
 #bookings h3 {
@@ -94,7 +102,69 @@ h2 {
     background-color: #f0f9ff;
 }
 
-/* Create Booking Form */
+#bookingList button {
+    background-color: #2193b0;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    margin-left: 5px;
+    padding: 4px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    width: 10%;
+    transition: background-color 0.3s ease;
+}
+
+
+/* Nearest Driver Section */
+#driverListSection {
+    background-color: #f0f9ff;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+#driverListSection h3 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+#driverList {
+    list-style-type: none;
+    padding: 0;
+}
+
+#driverList li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.3s ease;
+}
+
+#driverList li:hover {
+    background-color: #eef9ff;
+}
+
+#driverList .avatar {
+    background-color: #2193b0;
+    color: white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Form Styles */
 form#createBookingForm {
     background-color: #fff;
     padding: 20px;
@@ -111,15 +181,45 @@ form#createBookingForm label {
     display: block;
 }
 
-form#createBookingForm input {
+form#createBookingForm p {
+    font-size: 1.2rem;
+    color: #333;
+    padding-bottom:12px;
+    padding-top:11px;
+    margin-bottom: 8px;
+    display: block;
+}
+
+form#createBookingForm input,
+form#createBookingForm select {
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
     border-radius: 8px;
     border: 1px solid #ddd;
     font-size: 1rem;
+    background-color: #fff;
 }
 
+/* Styling the select element */
+form#createBookingForm select {
+    appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1" d="M2 0L0 2h4zM0 3l2 2 2-2z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
+}
+
+form#createBookingForm input:focus,
+form#createBookingForm select:focus {
+    outline: none;
+    border-color: #2193b0;
+    box-shadow: 0 0 5px rgba(33, 147, 176, 0.3);
+}
+
+
+
+/* Button Styles */
 form#createBookingForm button {
     background-color: #2193b0;
     color: white;
@@ -135,6 +235,25 @@ form#createBookingForm button {
 form#createBookingForm button:hover {
     background-color: #176d87;
 }
+
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+    .container {
+        width: 95%;
+        padding: 20px;
+    }
+
+    form#createBookingForm input,
+    form#createBookingForm select {
+        font-size: 0.9rem;
+    }
+
+    form#createBookingForm button {
+        font-size: 1rem;
+    }
+}
+
 
 /* Trip Tracking Section */
 #trackingSection {
@@ -196,7 +315,7 @@ form#createBookingForm button:hover {
 
 #tripHistoryList {
     list-style-type: none;
-    padding: 5;
+    padding: 0;
 }
 
 #tripHistoryList li {
@@ -210,17 +329,214 @@ form#createBookingForm button:hover {
 
 #tripHistoryList li:hover {
     background-color: #f0f9ff;
-    height: 400px;
-    width: 100%;
-    margin-top: 20px;
-    border-radius: 10px;
-    border: 1px solid #ddd;
 }
 
-#map {
-    height: 400px;
-    width: 100%;
-    margin-top: 20px;
-    border-radius: 10px;
+/* Payment Modal */
+#paymentModal {
+    background-color: #fff;
     border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    z-index: 1000;
+    display: none; /* Hidden initially */
+    text-align: center;
+}
+
+#paymentModal h4 {
+    font-size: 1.6rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+#paymentModal p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+#payBtn {
+    background-color: #2193b0;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+#payBtn:hover {
+    background-color: #176d87;
+}
+
+/* Rating Modal */
+#ratingModal {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    z-index: 1000;
+    display: none; /* Hidden initially */
+    text-align: center;
+}
+
+#ratingModal h4 {
+    font-size: 1.6rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+#ratingModal label {
+    display: block;
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+#ratingModal input {
+    width: 50px;
+    padding: 5px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-align: center;
+}
+
+#submitRatingBtn {
+    background-color: #2193b0;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+#submitRatingBtn:hover {
+    background-color: #176d87;
+}
+
+/* Trip History Section */
+#history {
+    background-color: #e9f5f8;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+#history h3 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+#tripHistoryList {
+    list-style-type: none;
+    padding: 0;
+}
+
+#tripHistoryList li {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.3s ease;
+}
+
+#tripHistoryList li:hover {
+    background-color: #eef9ff;
+}
+
+#tripHistoryList button {
+    background-color: #2193b0;
+    color: #fff;
+    border: none;
+    margin: 5px;
+    padding: 5px ;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 10%;
+}
+
+/* Close Modal Button */
+.closeModalBtn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #333;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.closeModalBtn:hover {
+    color: #e74c3c;
+}
+
+
+/* Media Queries for Mobile Devices */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        width: 95%;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    #profile h3,
+    #bookings h3,
+    #driverListSection h3,
+    #trackingSection h3,
+    #history h3 {
+        font-size: 1.5rem;
+    }
+
+    #profile p,
+    #bookings p,
+    #trackingSection p {
+        font-size: 1rem;
+    }
+
+    form#createBookingForm input,
+    form#createBookingForm button,
+    #trackingSection button {
+        padding: 10px;
+        font-size: 1rem;
+    }
+
+    #driverList li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #driverList .avatar {
+        margin-bottom: 10px;
+    }
+
+    #map {
+        height: 300px;
+    }
 }

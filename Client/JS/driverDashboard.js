@@ -37,18 +37,22 @@ window.addEventListener('DOMContentLoaded', async function() {
 
 // Toggle availability when the driver clicks the button
 document.getElementById('toggleAvailability').addEventListener('click', async function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const driverId = urlParams.get('driverId');
+    console.log(driverId);
     try {
         const availabilityElement = document.getElementById('availability');
         const currentStatus = availabilityElement.textContent.trim() === "available";
+        console.log(currentStatus)
         const newStatus = !currentStatus; // Toggle status
-
+        console.log(newStatus)
         // Update availability on the backend
         const response = await fetch('http://localhost:3001/driver/availability', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ availability: newStatus }),
+            body: JSON.stringify({ availability: newStatus,driverId:driverId }),
         });
 
         if (!response.ok) {
@@ -69,8 +73,12 @@ document.getElementById('toggleAvailability').addEventListener('click', async fu
 
 // Fetch available hires and display them in the UI
 document.getElementById('pickHire').addEventListener('click', async function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const driverId = urlParams.get('driverId');
+
     try {
-        const response = await fetch('http://localhost:3001/driver/hires');
+        
+        const response = await fetch(`http://localhost:3001/driver/hires/${driverId}`);
         if (!response.ok) {
             throw new Error('Network response was not ok.');
         }

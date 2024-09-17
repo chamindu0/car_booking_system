@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
     <link rel="stylesheet" href="../CSS/register.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css">
+
 </head>
 <body>
     <div class="container">
@@ -20,7 +22,8 @@
             <input type="password" id="password" name="password" placeholder="Enter your password" autocomplete="password" required>
 
             <label for="phone">Phone Number:</label>
-            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" autocomplete="phone" required>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" autocomplete="tel" required>
+
 
             <label for="role">Register as:</label>
             <select id="role" name="role" required>
@@ -47,6 +50,18 @@
         </form>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"></script>
+    <script>
+        // Initialize the phone input with intl-tel-input
+        const phoneInputField = document.querySelector("#phone");
+
+        const phoneInput = window.intlTelInput(phoneInputField, {
+            initialCountry: "lk", // Set default to Sri Lanka
+            separateDialCode: true, // Show the country code separately
+            utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
+        });
+    </script>
     <script src="../JS/register.js"></script>
 </body>
 </html>

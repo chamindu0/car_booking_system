@@ -45,4 +45,6 @@ document.getElementById('registerForm').addEventListener('submit', function(even
         console.error('Error:', error);
         alert('An error occurred while registering.');
     });
+
+
 });

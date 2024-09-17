@@ -17,7 +17,7 @@
 
       <!-- Passenger Profile Section -->
       <div id="profile">
-        <h3>Your Profile</h3>
+        <h3>Profile</h3>
         <p><strong>Name:</strong> <span id="name"></span></p>
         <p><strong>Email:</strong> <span id="email"></span></p>
         <p><strong>Phone:</strong> <span id="phone"></span></p>
@@ -29,15 +29,13 @@
         <ul id="bookingList"></ul>
       </div>
 
-  <div id="driverListSection"></div>
-  <h3>Nearest Drivers</h3>
-  <ul id="driverList"></ul>
+
         
-
 <form id="createBookingForm">
-    
-
-    
+    <label for="nearest">Nearest Drivers:</label>
+    <select id="driverSelect" required>
+        <option value="">-- Select a Driver --</option>
+    </select>
 
     <label for="pickupLocation">Pickup Location:</label>
     <input type="text" id="pickupLocation" required>
@@ -45,11 +43,21 @@
     <label for="dropoffLocation">Dropoff Location:</label>
     <input type="text" id="dropoffLocation" required>
 
+    <p id="result">Distance: Not calculated</p>
+
+    <p id="fare">Fare: Not calculated</p>
+     
     <label for="date">Date:</label>
     <input type="date" id="date" required>
 
+
+
     <button id="newBookingBtn">Create Booking</button>
 </form>
+
+
+
+
 
  <div id="map" style="height: 400px; width: 100%;"></div>
  <br>
@@ -64,12 +72,26 @@
       
      
 
-      <!-- Trip History Section -->
-      <div id="history">
-        <h3>Your Trip History</h3>
-        <ul id="tripHistoryList"></ul>
-      </div>
-    </div>
+<h3>Your Trip History</h3>
+<ul id="tripHistoryList"></ul>
+
+<!-- Payment Modal -->
+<div id="paymentModal" style="display:none;">
+    <button class="closeModalBtn">&times;</button>
+    <h4>Payment</h4>
+    <p>Fare: <span id="fareAmount"></span></p>
+    <button id="payBtn">Pay</button>
+</div>
+
+<!-- Rating Modal -->
+<div id="ratingModal" style="display:none;">
+   <button class="closeModalBtn">&times;</button>
+    <h4>Rate Your Trip</h4>
+    <label for="rating">Rating (1-5):</label>
+    <input type="number" id="ratingInput" min="1" max="5">
+    <button id="submitRatingBtn">Submit Rating</button>
+</div>
+
 
     <script src="../JS/passengerDashboard.js"></script>
   </body>
