@@ -6,7 +6,16 @@ const authRoutes = require('./routes/authRoutes');
 const driverRoutes = require('./routes/driverRoutes');
 const pessengerRoutes = require('./routes/passengerRoutes');
 const tripRoutes = require('./routes/tripRoutes');
+const serverless = require("serverless-http");
+const router = express.Router();
 require('dotenv').config();
+
+router.get("/", (req, res) => {
+    res.send("App is running..");
+});
+
+app.use("/.netlify/functions/app", router);
+module.exports.handler = serverless(app);
 
 const app = express();
 const PORT = process.env.PORT ;
